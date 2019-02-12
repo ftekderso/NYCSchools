@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		6F58D071220DF0AB0048B95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D070220DF0AB0048B95B /* AppDelegate.swift */; };
-		6F58D073220DF0AB0048B95B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D072220DF0AB0048B95B /* ViewController.swift */; };
 		6F58D076220DF0AB0048B95B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F58D074220DF0AB0048B95B /* Main.storyboard */; };
 		6F58D078220DF0AE0048B95B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F58D077220DF0AE0048B95B /* Assets.xcassets */; };
 		6F58D07B220DF0AE0048B95B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F58D079220DF0AE0048B95B /* LaunchScreen.storyboard */; };
+		6F58D083220DF0CB0048B95B /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D082220DF0CB0048B95B /* School.swift */; };
+		6F58D085220DF0DB0048B95B /* SATScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D084220DF0DB0048B95B /* SATScore.swift */; };
+		6F58D089220DF1210048B95B /* SchoolsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D088220DF1210048B95B /* SchoolsDetailViewController.swift */; };
+		6F58D08D220DF68F0048B95B /* SchoolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D08C220DF68F0048B95B /* SchoolsTableViewController.swift */; };
+		6F58D092220E17140048B95B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D091220E17140048B95B /* NetworkManager.swift */; };
+		6F58D094220E44660048B95B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D093220E44660048B95B /* NetworkService.swift */; };
+		6F58D09822110C030048B95B /* SchoolDataEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D09722110C030048B95B /* SchoolDataEndPoint.swift */; };
+		6F58D09A221110A30048B95B /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D099221110A30048B95B /* HTTPMethods.swift */; };
+		6F58D09C2211357E0048B95B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F58D09B2211357E0048B95B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F58D06D220DF0AB0048B95B /* 20190208-FikirteDerso-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190208-FikirteDerso-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F58D070220DF0AB0048B95B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F58D072220DF0AB0048B95B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F58D075220DF0AB0048B95B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F58D077220DF0AE0048B95B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F58D07A220DF0AE0048B95B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F58D07C220DF0AE0048B95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F58D082220DF0CB0048B95B /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		6F58D084220DF0DB0048B95B /* SATScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScore.swift; sourceTree = "<group>"; };
+		6F58D088220DF1210048B95B /* SchoolsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsDetailViewController.swift; sourceTree = "<group>"; };
+		6F58D08C220DF68F0048B95B /* SchoolsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsTableViewController.swift; sourceTree = "<group>"; };
+		6F58D091220E17140048B95B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6F58D093220E44660048B95B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		6F58D09722110C030048B95B /* SchoolDataEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDataEndPoint.swift; sourceTree = "<group>"; };
+		6F58D099221110A30048B95B /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		6F58D09B2211357E0048B95B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +71,45 @@
 			isa = PBXGroup;
 			children = (
 				6F58D070220DF0AB0048B95B /* AppDelegate.swift */,
-				6F58D072220DF0AB0048B95B /* ViewController.swift */,
 				6F58D074220DF0AB0048B95B /* Main.storyboard */,
 				6F58D077220DF0AE0048B95B /* Assets.xcassets */,
 				6F58D079220DF0AE0048B95B /* LaunchScreen.storyboard */,
 				6F58D07C220DF0AE0048B95B /* Info.plist */,
+				6F58D09B2211357E0048B95B /* Constants.swift */,
+				6F58D08A220DF12B0048B95B /* Model */,
+				6F58D08B220DF1360048B95B /* ViewControllers */,
+				6F58D090220E06EF0048B95B /* Network */,
 			);
 			path = "20190208-FikirteDerso-NYCSchools";
+			sourceTree = "<group>";
+		};
+		6F58D08A220DF12B0048B95B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F58D082220DF0CB0048B95B /* School.swift */,
+				6F58D084220DF0DB0048B95B /* SATScore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F58D08B220DF1360048B95B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F58D08C220DF68F0048B95B /* SchoolsTableViewController.swift */,
+				6F58D088220DF1210048B95B /* SchoolsDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6F58D090220E06EF0048B95B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6F58D099221110A30048B95B /* HTTPMethods.swift */,
+				6F58D09722110C030048B95B /* SchoolDataEndPoint.swift */,
+				6F58D091220E17140048B95B /* NetworkManager.swift */,
+				6F58D093220E44660048B95B /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F58D073220DF0AB0048B95B /* ViewController.swift in Sources */,
+				6F58D085220DF0DB0048B95B /* SATScore.swift in Sources */,
+				6F58D089220DF1210048B95B /* SchoolsDetailViewController.swift in Sources */,
+				6F58D094220E44660048B95B /* NetworkService.swift in Sources */,
+				6F58D083220DF0CB0048B95B /* School.swift in Sources */,
+				6F58D092220E17140048B95B /* NetworkManager.swift in Sources */,
+				6F58D09C2211357E0048B95B /* Constants.swift in Sources */,
+				6F58D09A221110A30048B95B /* HTTPMethods.swift in Sources */,
 				6F58D071220DF0AB0048B95B /* AppDelegate.swift in Sources */,
+				6F58D09822110C030048B95B /* SchoolDataEndPoint.swift in Sources */,
+				6F58D08D220DF68F0048B95B /* SchoolsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
