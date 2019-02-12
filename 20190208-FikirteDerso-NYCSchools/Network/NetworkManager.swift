@@ -24,6 +24,8 @@ public struct NetworkManager {
     
     typealias SchoolComplitionHandler = (_ schoolData:[School]?, _ error:String?) -> Void
     typealias ScoreComplitionHandler = (_ scoreData:SATScore?, _ error:String?) -> Void
+    
+    // MARK : Network Response Check
     private func checkNetworkResponse(response:HTTPURLResponse) -> NetworkResult<String> {
         switch response.statusCode {
         case 200...299: return .success
@@ -32,6 +34,7 @@ public struct NetworkManager {
         }
     }
     
+     // MARK : API Request
     func getSchoolsFromURL(queryItems:[URLQueryItem]? ,complition:@escaping SchoolComplitionHandler) {
         
         //get School API Type
@@ -88,7 +91,7 @@ public struct NetworkManager {
     func getSatScoresFromURL(queryItems:[URLQueryItem]?, complition:@escaping ScoreComplitionHandler) {
         //get SatScore API Type
         let scoreApi = SchoolDataAPI.score
-        
+     
         //make a network service call for Score API Type
         let networkService = NetworkService()
         networkService.makeApiRequest(apiType: scoreApi, queryItems: queryItems) { (data:Data?, response:URLResponse?, error:Error?) in

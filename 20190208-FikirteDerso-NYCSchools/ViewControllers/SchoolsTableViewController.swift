@@ -12,8 +12,10 @@ class SchoolsTableViewController: UITableViewController {
     
     var schoolsArray:[School] = []
     var satScorsArray:[SATScore] = []
-
+    static let satScoreCache = NSCache<AnyObject, AnyObject>()
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,26 +65,57 @@ class SchoolsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedSchool = self.schoolsArray[indexPath.row]
-        let networkManager = NetworkManager()
-        let queryItem = [URLQueryItem(name: Constants.JSONResponseKey.SchoolName, value: selectedSchool.schoolName?.uppercased())]
         
-        //get score data for selected school
-        networkManager.getSatScoresFromURL(queryItems: queryItem) { (satScores:SATScore?, error:String?) in
-            if error != nil {
-                print("Network Error geting SATScore data: \(String(describing: error))")
-            }
-            else {
-                if let satScores = satScores {
-                    DispatchQueue.main.async {
-                        self.activityIndicator.stopAnimating()
-                        let storyboared = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-                        let schoolsDetailViewController = storyboared.instantiateViewController(withIdentifier: "SchoolsDetailViewController") as! SchoolsDetailViewController
-                        schoolsDetailViewController.schoolDetail = selectedSchool
-                        schoolsDetailViewController.satScores = satScores
-                         self.navigationController?.pushViewController(schoolsDetailViewController, animated: true)
+        //check cached score data for selected school
+        if let selectedSchoolName = selectedSchool.schoolName {
+            //get cached score data for chool
+            self.getCachedData(key: selectedSchoolName) { (cachedSatScore:SATScore?) in
+                
+                if let cachedSatScore = cachedSatScore {
+                    self.loadDetailViewForSchool(selectedSchool: selectedSchool, satScore: cachedSatScore)
+                } else {
+                    //downlad score data for school
+                    let networkManager = NetworkManager()
+                    let queryItem = [URLQueryItem(name: Constants.JSONResponseKey.SchoolName, value: selectedSchool.schoolName?.uppercased())]
+                    
+                    //get score data for selected school
+                    networkManager.getSatScoresFromURL(queryItems: queryItem) { (satScore:SATScore?, error:String?) in
+                        if error != nil {
+                            print("Network Error geting SATScore data: \(String(describing: error))")
+                        }
+                        else {
+                            if let satScore = satScore {
+                                DispatchQueue.main.async {
+                                    // cache score data
+                                    SchoolsTableViewController.satScoreCache.setObject(satScore as AnyObject, forKey: selectedSchool.schoolName as AnyObject)
+                                    self.loadDetailViewForSchool(selectedSchool: selectedSchool, satScore: satScore)
+                                }
+                            }
+                        }
                     }
                 }
-            }
+            } 
+            
+        }
+  
+    }
+    
+    func loadDetailViewForSchool(selectedSchool:School, satScore:SATScore) {
+        self.activityIndicator.stopAnimating()
+        let storyboared = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let schoolsDetailViewController = storyboared.instantiateViewController(withIdentifier: "SchoolsDetailViewController") as! SchoolsDetailViewController
+        schoolsDetailViewController.schoolDetail = selectedSchool
+        schoolsDetailViewController.satScores = satScore
+        self.navigationController?.pushViewController(schoolsDetailViewController, animated: true)
+    }
+    
+    func getCachedData(key:String, completion: @escaping (_ cachedData:SATScore?)->()) {
+        if let data = SchoolsTableViewController.satScoreCache.object(forKey: key as AnyObject) {
+            completion(data as? SATScore)
+        }
+        else {
+            completion(nil)
         }
     }
+    
 }

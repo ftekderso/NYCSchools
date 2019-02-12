@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Schools Table View Controller-->
+        <!--NYC Schools-->
         <scene sceneID="0EE-i1-e2L">
             <objects>
                 <tableViewController storyboardIdentifier="SchoolsTableViewController" id="jOa-LD-ti9" customClass="SchoolsTableViewController" customModule="_0190208_FikirteDerso_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="jOa-LD-ti9" id="5DZ-Zt-Vjs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="T8r-Aa-Gzw"/>
+                    <navigationItem key="navigationItem" title="NYC Schools" id="T8r-Aa-Gzw"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Kid-zD-Lqe" id="9z0-dr-ekz"/>
                     </connections>
